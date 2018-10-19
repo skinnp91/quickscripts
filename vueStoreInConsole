@@ -1,0 +1,2 @@
+// Access Vue Store State from console when Vue Extension is disabled
+document.getElementsByTagName('div')[0].__vue__.$store.state
