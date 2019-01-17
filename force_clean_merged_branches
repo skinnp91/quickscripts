@@ -1,0 +1,1 @@
+remote_branches=$(for branch in $(git branch --remote); do echo $branch | grep --color=Never origin | grep --color=Never -vE 'HEAD|master' | sed 's/^origin\///'; done); for branch in $remote_branches; do if git branch | grep --color=Never $branch; then echo "Deleting ${branch} ..."; git branch -D $branch; fi; done
